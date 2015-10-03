@@ -1,0 +1,38 @@
+baseurl = "http://www.ericholzbach.net/"
+languageCode = "en-us"
+title = "Unix Blather"
+[params]
+    sidebartitle = "Unix Blather"
+    sidebartagline = "...or whatever."
+    sidebarphoto = "/img/squid4.png"
+
+[[menu.main]]
+    name = "Resume"
+    url = "/resume"
+
+
+[[menu.social]]
+    pre = "<i class='fa fa-github-alt fa-lg'></i>"
+    url = "http://www.github.com/eholzbach"
+    identifier = "github"
+[[menu.social]]
+    pre = "<i class='fa fa-linkedin fa-lg'></i>"
+    url = "https://www.linkedin.com/pub/eric-holzbach/45/527/680"
+    identifier = "linkedin"
+[[menu.social]]
+    pre = "<i class='fa fa-twitter fa-lg'></i>"
+    url = "http://www.twitter.com/eric_holzbach"
+    identifier = "twitter"
+[[menu.social]]
+    pre = "<i class='fa fa-camera-retro fa-lg'></i>"
+    url = "https://www.flickr.com/photos/respite"
+    identifier = "flickr"
+[[menu.social]]
+    pre = "<i class='fa fa-spotify fa-lg'></i>"
+    url = "http://open.spotify.com/user/ericholzbach"
+    identifier = "spotify"
+[[menu.social]]
+    pre = "<i class='fa fa-bicycle fa-lg'></i>"
+    url = "https://www.strava.com/athletes/eholzbach"
+    identifier = "strava"
+
