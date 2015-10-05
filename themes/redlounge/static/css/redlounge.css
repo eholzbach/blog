@@ -468,12 +468,13 @@ hr.thin {
     }
 
     .header .sidebarphoto{
-	    width: 100%;
-	    height: 100%;
-	    border-radius: 10%;
-	    -moz-border-radius: 10%;
-	    -webkit-border-radius: 10%;
-	}
+	width: 100%;
+	max-width: 277px;
+	height: 100%;
+	border-radius: 10%;
+	-moz-border-radius: 10%;
+	-webkit-border-radius: 10%;
+    }
 
     .sidebar {
         position: fixed;
