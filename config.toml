@@ -1,4 +1,4 @@
-baseurl = "http://www.ericholzbach.net/"
+baseurl = "https://www.ericholzbach.net/"
 languageCode = "en-us"
 title = "Unix Blather"
 [params]
@@ -13,7 +13,7 @@ title = "Unix Blather"
 
 [[menu.social]]
     pre = "<i class='fa fa-github-alt fa-lg'></i>"
-    url = "http://www.github.com/eholzbach"
+    url = "https://www.github.com/eholzbach"
     identifier = "github"
 [[menu.social]]
     pre = "<i class='fa fa-linkedin fa-lg'></i>"
@@ -21,7 +21,7 @@ title = "Unix Blather"
     identifier = "linkedin"
 [[menu.social]]
     pre = "<i class='fa fa-twitter fa-lg'></i>"
-    url = "http://www.twitter.com/eric_holzbach"
+    url = "https://www.twitter.com/eric_holzbach"
     identifier = "twitter"
 [[menu.social]]
     pre = "<i class='fa fa-camera-retro fa-lg'></i>"
@@ -29,7 +29,7 @@ title = "Unix Blather"
     identifier = "flickr"
 [[menu.social]]
     pre = "<i class='fa fa-spotify fa-lg'></i>"
-    url = "http://open.spotify.com/user/ericholzbach"
+    url = "https://open.spotify.com/user/ericholzbach"
     identifier = "spotify"
 [[menu.social]]
     pre = "<i class='fa fa-bicycle fa-lg'></i>"

@@ -5,7 +5,13 @@ nodate: "true"
 nopaging: "true"
 ---
 <br>
-**Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - Current<br>
+**Senior Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - Current<br>
+
+* Infrastructure architecture
+* Product platform design
+
+<br>
+**Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015<br>
 
 * Cloud security for production infrastructure
 * Management of authentication and authorization systems
