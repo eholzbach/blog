@@ -1,6 +1,7 @@
 baseurl = "https://www.ericholzbach.net/"
 languageCode = "en-us"
 title = "Unix Blather"
+theme = "redlounge"
 [params]
     sidebartitle = "Unix Blather"
     sidebartagline = "...or whatever."
