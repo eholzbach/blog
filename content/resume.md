@@ -7,8 +7,10 @@ nopaging: "true"
 <br>
 **Senior Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - Current<br>
 
-* Infrastructure architecture
-* Product platform design
+* Data center and AWS infrastructure architecture
+* Security audit & remediation
+* Deployment automation
+* Network engineering
 
 <br>
 **Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015<br>
@@ -28,7 +30,7 @@ nopaging: "true"
 <br>
 **Senior Systems Administrator - [FireEye Inc.](http://www.fireeye.com)** / January 2014 - February 2014<br>
 
-FireEye Inc. aquired Mandiant January 2, 2014
+FireEye Inc. acquired Mandiant January 2, 2014
 
 <br>
 **Senior Systems Administrator - [Mandiant](http://www.mandiant.com)** / February 2012 - January 2014<br> 
@@ -38,7 +40,7 @@ FireEye Inc. aquired Mandiant January 2, 2014
 * Deployment and management of network intrusion detection systems in a globally distributed environment
 * Process automation
 * Configuration and change management with puppet
-* Custom software deployment and lifecycle management
+* Custom software deployment and life cycle management
 * Provisioning of servers, switches, firewalls, general NOC maintenance
 * Customer service support
 
@@ -63,7 +65,7 @@ FireEye Inc. aquired Mandiant January 2, 2014
 * Disaster recovery planning and risk management applied to environmental controls of systems which maintain the company's assets
 * Business continuity planning to react to political, legal and seasonal threats
 * Qualitative risk assessment
-* Administration of office infrastructure, virtualization with VirtualBox
+* Administration of infrastructure, virtualization with VirtualBox
 * Minor development with HTML/CSS/PHP
 
 <br>
@@ -86,7 +88,8 @@ FireEye Inc. aquired Mandiant January 2, 2014
 <br>
 **Credentials**<br>
 
-* (ISC)2 Certtified Information Systems Security Professional (CISSP)
+* (ISC)2 Certified Information Systems Security Professional (CISSP)
+* Puppet Certified Professional
 * CompTIA Security+
 * CompTIA Network+
 
