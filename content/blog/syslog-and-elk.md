@@ -14,4 +14,4 @@ While there is no simple open source solution that does everything out of the bo
 
 With this setup I retained the ability to do longer maintenance downstream. I can issue rolling restarts of elasticsearch without dropping the cluster. I've configured rsyslogd clients with a local queue and forward with tcp. I prefer to put a little bit of pressure across the fleet instead of a single process having to buffer the collective queue. This enables me to stop the centralized rsyslog ingest process with  data buffered client side until availability is restored.
 
-Flexiable solution implemented. Check the box. Walk away.
+Flexible solution implemented. Check the box. Walk away.

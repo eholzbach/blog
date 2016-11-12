@@ -1,7 +1,7 @@
 ---
 date: "2011-10-17T01:18:00-07:00"
-title: "A breif analysis of a tor exit node"
-slug: "a-breif-analysis-of-a-tor-exit-node"
+title: "A brief analysis of a tor exit node"
+slug: "a-brief-analysis-of-a-tor-exit-node"
 ---
 
 There is no doubt of the intentions of the tor project, though I've always wondered who most commonly uses it, and what kinds of traffic are they shuffling through it. In the event you're are unfamiliar with the [tor project](http://www.torproject.org/), it is a relay of encrypted proxies you may pass your network traffic through with the hopes of maintaining anonymity. You may find an in depth explanation of [what tor is, how it works, and why it exist, here](http://www.torproject.org/about/overview.html.en).
@@ -275,7 +275,7 @@ Tor and http traffic beat out torrents for the number of connections made, thoug
 **Security notes and inbound attack data**
 
 
-There 515 instances of credentials passed in clear text through this tor relay, 92 were unique. 79 were passed over http, 9 snmp, and 4 pop. There was also a wealth of sensitive data disclosed in url's and cookies. The following list if of web hosts the cleartext credentials were forked to. The majority of which are torrent trackers. The frequency of yahoo is due to their web applications passing data in the clear, not a sign of its popularity.
+There 515 instances of credentials passed in clear text through this tor relay, 92 were unique. 79 were passed over http, 9 snmp, and 4 pop. There was also a wealth of sensitive data disclosed in url's and cookies. The following list if of web hosts the clear text credentials were forked to. The majority of which are torrent trackers. The frequency of yahoo is due to their web applications passing data in the clear, not a sign of its popularity.
 <blockquote>
 <pre>02.ah127.in
 02.ahr3.in

@@ -15,15 +15,23 @@ Linux users may find the drive naming structure odd, though its a much better de
 You may use fdisk and disklabel to cut the slice and set up partitions on your new drive, though [sysinstall](http://www.freebsd.org/cgi/man.cgi?query=sysinstall&amp;sektion=8) or the stand alone [sade](http://www.freebsd.org/cgi/man.cgi?query=sade&amp;apropos=0&amp;sektion=8&amp;manpath=FreeBSD+8.2-RELEASE&amp;arch=default&amp;format=html) are better suited for ease of use.  In this example my current installation was on /dev/ad4, and I was moving to a new sata drive attached on /dev/ad1.
 
 My current partition scheme and their mount points looked like this:
-<blockquote>/dev/ad4s1a /
+
+```bash
+/dev/ad4s1a /
 /dev/ad4s1e /tmp
 /dev/ad4s1f  /usr
-/dev/ad4s1d /var</blockquote>
+/dev/ad4s1d /var
+```
+
 The commands to migrate are simple.
-<blockquote>newfs /dev/ad1s1a
+
+```bash
+newfs /dev/ad1s1a
 mount /dev/ad1s1a /mnt
 cd /mnt
 dump 0afL - / | restore rf -</blockquote>
+```
+
 This was to move my root partition. Take note the L argument for dumping from a live file system. Follow the same process to dump usr, tmp, and var, piping them to their new location. Edit fstab on the new drive to correctly reflect where it is or will be. Shutdown the machine, remove your failing disk, boot into your migrated installation, and enjoy not having to reinstall or configure anything.
 
 Finally, stare at the failing drive now sitting on your desk, and curse the manufacturer. Nobody produces quality drives anymore.

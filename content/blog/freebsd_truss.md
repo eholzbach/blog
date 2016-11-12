@@ -18,8 +18,10 @@ The problem with sorting through software compiled from high level languages is 
 
 This does not leave us with much. [FreeBSD](http://www.freebsd.org/) is an operating system written in C, and is open source. The is no widespread need for binary debuggers on this platform.
 
-If you are familiar with [strace](http://en.wikipedia.org/wiki/Strace) for GNU/Linux systems, you will quickly pick up [truss(1)](http://www.freebsd.org/cgi/man.cgi?query=truss&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+8.2-RELEASE&amp;arch=default&amp;format=html). Both these utilities trace the calls made to the kernel during a programs execution. The following is the truss output of our [example program found here](https://github.com/eholzbach/assembly/blob/master/wipe.asm), making three passes overwriting auth.log before unlinking it from the filesystem:
-<blockquote><pre>devel:~/asm% truss ./wipe auth.log
+If you are familiar with [strace](http://en.wikipedia.org/wiki/Strace) for GNU/Linux systems, you will quickly pick up [truss(1)](http://www.freebsd.org/cgi/man.cgi?query=truss&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+8.2-RELEASE&amp;arch=default&amp;format=html). Both these utilities trace the calls made to the kernel during a programs execution. The following is the truss output of our [example program found here](https://github.com/eholzbach/assembly/blob/master/wipe.asm), making three passes overwriting auth.log before unlinking it from the file system:
+
+```bash
+devel:~/asm% truss ./wipe auth.log
 open("auth.log",O_RDWR,027757764434) = 3 (0x3)
 lseek(3,0x0,SEEK_END) = 32 (0x20)
 lseek(3,0x0,SEEK_SET) = 0 (0x0)
@@ -34,9 +36,12 @@ fsync(0x3,0x4,0x3,0x80491f8,0x2000,0x5) = 0 (0x0)
 lseek(3,0x0,SEEK_SET) = 0 (0x0)
 close(3) = 0 (0x0)
 unlink("auth.log") = 0 (0x0)
-process exit, rval = 10</pre></blockquote>
+process exit, rval = 10
+```
+
 It is also handy to get a summery of calls made, errors flagged, and total system time used:
-<blockquote><pre>devel:~/asm% truss -c ./wipe auth.log
+```bash
+devel:~/asm% truss -c ./wipe auth.log
 syscall seconds calls errors
 lseek 0.000196957 5 0
 open 0.000084799 1 0
@@ -44,21 +49,28 @@ close 0.000044560 1 0
 unlink 0.000122718 1 0
 write 0.000219196 3 0
 
-
-0.000668230 11 0</pre></blockquote>
+0.000668230 11 0
+```
 While this is no substitution for a real debugging instance, this makes it trivial to track down a crash or point of error, assuming you are familiar with your code. I tend to include error checking for almost ever routine and phase it out as development progresses. Without the use of a real debugger this will drastically reduce the time it takes to locate a bug. Lets make the following diff to our example program to produce an error:
-<blockquote><pre>30c30
-&lt; push ecx
---
-&gt; push eax</pre></blockquote>
+
+```bash
+30c30
+< push ecx
+ --
+> push eax</pre></blockquote>
+```
 and execute it with truss:
-<blockquote><pre>devel:~/asm% truss ./wipe auth.log
+```bash
+devel:~/asm% truss ./wipe auth.log
 open("(null)",O_RDWR,027757764460) ERR#14 'Bad address'
 fail
 write(1,"fail\n",5) = 5 (0x5)
-process exit, rval = 4</pre></blockquote>
+process exit, rval = 4
+```
 We can clearly see the program did not make it very far, failing to open the file we are trying to wipe. So lets take a look at our code:
-<blockquote><pre>_start:
+
+```
+_start:
 pop eax
 pop eax
 pop ecx
@@ -72,17 +84,21 @@ push eax
 mov eax,5
 push eax
 int 0x80
-jc .fail</pre></blockquote>
+jc .fail
+```
+
 The program starts by pulling in command line arguments. The first being the argument count, the second is the name of the program itself, and the third is auth.log. This ascii pointer has been popped off the stack into ecx. A quick review of the next routine shows we have mistakenly pushed eax to the stack instead of ecx which contains the ascii file pointer, hence the bad address error and the inability to open our file. An easy methodology for resolution. There are also the [ktrace](http://www.freebsd.org/cgi/man.cgi?query=ktrace&amp;sektion=1) and [kdump](http://www.freebsd.org/cgi/man.cgi?query=kdump&amp;sektion=1) utilities which may help resolve work flow issues. While none of this is a replacement for an actual debugger, you can usually find your error with truss before you even need to curse at your debugger. This allows plenty of time to `more /usr/src/sys/kern/syscalls.master` followed by `man 2 stupidsyscall` followed by cursing at the standard C library.
 
 Disassembling small static binaries is very straightforward. Objdump is included in the base and provides the expected results, though if you write in intel syntax be aware it produces slightly different syntax. Here is the same snippet of our program:
-<blockquote><pre>devel:~/asm% objdump -d wipe
+
+```bash
+devel:~/asm% objdump -d wipe
 
 wipe: file format elf32-i386-freebsd
 
 Disassembly of section .text:
 
-08048080 &lt;.text&gt;:
+08048080 <.text>:
 8048080: 58 pop %eax
 8048081: 58 pop %eax
 8048082: 59 pop %ecx
@@ -95,7 +111,9 @@ Disassembly of section .text:
 804808d: b8 05 00 00 00 mov $0x5,%eax
 8048092: 50 push %eax
 8048093: cd 80 int $0x80
-8048095: 72 45 jb 0x80480dc</pre></blockquote>
+8048095: 72 45 jb 0x80480dc
+```
+
 As you can see all it takes to start producing a readable disassembly of your program is some human friendly address locations and the swap from at&amp;t syntax to my preferred intel syntax.
 
-How often will youuse this in the real world? Never, unless your job title is "malware reverse engineer". How much fun is it to tinker with? Boatloads.
+How often will you use this in the real world? Never, unless your job title is "malware reverse engineer". How much fun is it to tinker with? Boatloads.
