@@ -4,8 +4,12 @@ date: "2010-12-20T01:04:00-07:00"
 nodate: "true"
 nopaging: "true"
 ---
+**Principal Software Engineer – [Gigamon](https://www.gigamon.com)** / July 2018 - Current<br>
+
+Gigamon acquired Icebrg July, 2018
+
 <br>
-**Senior Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - Current<br>
+**Senior Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018<br>
 
 * Data center and AWS infrastructure architecture
 * Deployment automation
