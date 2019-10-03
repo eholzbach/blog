@@ -4,24 +4,31 @@ date: "2010-12-20T01:04:00-07:00"
 nodate: "true"
 nopaging: "true"
 ---
-**Principal Software Engineer – [Gigamon](https://www.gigamon.com)** / July 2018 - Current<br>
+**Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - Current<br>
 
 Gigamon acquired Icebrg July, 2018
 
-<br>
-**Senior Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018<br>
+* Manager of DevOps team, responsible for Gigamon Insight SaaS production environments
+* Leader by example, listener, coach and enabler
+* Hands on responsibilities as an individual contributor
 
-* Data center and AWS infrastructure architecture
-* Deployment automation
-* Network engineering
-* Security audit & remediation
+<br>
+**Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018<br>
+
+* Infrastructure architecture, responsible for all physical and cloud environments
+* Deployment automation with Golang, Kubernetes, Puppet, Terraform
+* Monitoring, metric collection and storage in high availability systems
+* Network engineering with Arista, AWS, Cisco, pfSense, VyOS
+* Network & host security audit & remediation
+* Management of intrusion detection systems in a globally distributed environment
+* Provisioning of physical servers, switches, routers and other network appliances
 
 <br>
 **Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015<br>
 
-* Cloud security for production infrastructure
+* Design & implementation of security controls for production infrastructure
 * Management of authentication and authorization systems
-* System & user access control implementation
+* System & user access controls
 
 <br>
 **Senior Configuration Engineer - [FireEye Inc.](http://www.fireeye.com)** / February 2014 - January 2015<br>
@@ -29,7 +36,7 @@ Gigamon acquired Icebrg July, 2018
 * Puppet module development
 * Infrastructure architecture 
 * Service reliability design
-* Process streamlining and automation
+* Deployment automation
 
 <br>
 **Senior Systems Administrator - [FireEye Inc.](http://www.fireeye.com)** / January 2014 - February 2014<br>
@@ -40,9 +47,9 @@ FireEye Inc. acquired Mandiant January 2, 2014
 **Senior Systems Administrator - [Mandiant](http://www.mandiant.com)** / February 2012 - January 2014<br> 
 
 * Implementation and management of production infrastructure
-* Process automation
-* Configuration management with Puppet, deployment orchestration with Mcollective
-* Custom software deployment and lifecycle management
+* Deployment automation
+* Configuration management with Puppet
+* Software lifecycle management
 * Provisioning of servers, switches, firewalls, general NOC maintenance
 * Deployment and management of network intrusion detection systems in a globally distributed environment
 
@@ -50,13 +57,10 @@ FireEye Inc. acquired Mandiant January 2, 2014
 **Linux Systems Administrator - [InMotion Hosting](http://www.inmotionhosting.com)** / August 2010 - February 2012<br>
 
 * QoS management in shared, virtualized and dedicated platforms
-* Monitoring and incident response
-* Task automation
-* Identify and resolve PCI-DSS issues
-* Troubleshooting hardware failures
-* Provisioning of servers, switches, pdu's, general NOC maintenance
-* Network and host intrusion detection
-* Rotating 24 hour on-call schedule
+* Network and host intrusion detection, incident response
+* Deployment automation
+* PCI-DSS audit & resolution
+* Provisioning of physical servers, switches, routers and other network appliances
 * Customer service support
 
 <br>
