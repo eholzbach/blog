@@ -9,8 +9,7 @@ Monitoring automation should be a core component of any mission critical infrast
 For better or for worse [Nagios](http://www.nagios.org/) has been affecting (controlling) my life for years. If you have spent any time looking at the [puppetlabs type reference](https://docs.puppetlabs.com/references/latest/type.html) it's hard to overlook that roughly a third of the types are for nagios objects. A clear indicator of how important this was to so many people to be migrated in as a core component of the product.
 
 [Puppetdb](https://docs.puppetlabs.com/puppetdb/latest/#what-data) is a [clojure](http://clojure.org/) application that stores puppet agent facts, catalog, run reports,
-and any other data exported and plugs it in a [postgresql](http://www.postgresql.org/) back end. The data is then available via sql query or [rest api](http://en.wikipedi
-a.org/wiki/Representational_state_transfer) that responds in [JSON](http://json.org/). While this data can be helpful in endless ways, the relevant function here is that
+and any other data exported and plugs it in a [postgresql](http://www.postgresql.org/) back end. The data is then available via sql query or [rest api](http://en.wikipedia.org/wiki/Representational_state_transfer) that responds in [JSON](http://json.org/). While this data can be helpful in endless ways, the relevant function here is that
 it can store data exported by agents. Having an automated authoritative data store is the golden ticket to automating nagios monitoring.
 
 Knowing this, like so may others, I first tried to find a module someone else had written that would work in my environment. I never found a solution that was flexible or put together in a logical fashion. Repeatedly I've started to write a puppet module with the intentions of public consumption, only to hit the wall of "how is this going to be flexible enough to work in someone else's puppet code base".
@@ -128,7 +127,7 @@ With this framework it's now trivial to automate unique nagios checks for puppet
   use                 => 'generic-service', 
   host_name           => $::hostname,
   service_description => 'Unicorn Status',
-  check_command       => 'check_unicorn-${::hostname}",
+  check_command       => "check_unicorns-${::hostname}",
 }<br>
 @@nagios_command { "check_unicorns-${::hostname}":
   command_line => "check_nrpe -H $HOSTADDRESS$ -c check_unicorns",

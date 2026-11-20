@@ -1,5 +1,5 @@
 baseurl = "https://www.ericholzbach.net/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Unix Blather"
 theme = "redlounge"
 [params]
@@ -37,3 +37,6 @@ theme = "redlounge"
     url = "https://www.strava.com/athletes/eholzbach"
     identifier = "strava"
 
+
+[markup.goldmark.renderer]
+    unsafe = true

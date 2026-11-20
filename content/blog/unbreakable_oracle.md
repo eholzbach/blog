@@ -26,6 +26,7 @@ The open source fork of the <a href="http://en.wikipedia.org/wiki/OpenSolaris" t
 
 The turn Ksplice is taking was made quite clear with <a href="http://www.oracle.com/us/corporate/acquisitions/ksplice/customer-letter-430127.html" target="_blank">Oracles announcement of acquisition</a>.
 <blockquote>"Oracle does not plan to support the use of Ksplice technology with Red Hat Enterprise Linux or SUSE Enterprise Linux. The Oracle Linux Premier Support subscription applies to Unbreakable Enterprise Kernel."</blockquote>
+
 Great. We now have to buy an Oracle branded <a href="http://kernel.org/" target="_blank">linux kernel</a> to get support. See where this is going?
 
 The extensive market saturation is frightening. The influence this single corporation has on the most commonly used and freely available applications to build IT infrastructure is nothing less than reminiscent of the grip Redmond maintains over modern computing. This is a full on assault, attempting to leverage technology and control the market majority of a minority market. A model of a single company which more or less calls the shots, and squashes the products they don't view as financially viable.

@@ -16,6 +16,7 @@ as a Principal Infrastructure Engineer. I’ve since grown the infrastructure te
 * Development in Go
 
 <br>
+
 **Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - December 2020<br>
 
 Gigamon acquired Icebrg July, 2018
@@ -25,6 +26,7 @@ Gigamon acquired Icebrg July, 2018
 * Continuation of responsibilities as an individual contributor
 
 <br>
+
 **Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018<br>
 
 I joined ICEBRG early in the start up phase as the sixth member of engineering, independently taking on responsibilities<br>
@@ -40,6 +42,7 @@ infrastructure, networking, authentication and access controls.<br>
 * Data center maintenance, physical servers, switches and routers, fiber network
 
 <br>
+
 **Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015<br>
 
 Our team managed network and systems access controls for the products production infrastructure spanning data centers around the world.<br>
@@ -49,6 +52,7 @@ Our team managed network and systems access controls for the products production
 * System & user access controls
 
 <br>
+
 **Senior Configuration Engineer - [FireEye Inc.](http://www.fireeye.com)** / February 2014 - January 2015<br>
 
 FireEye Inc. acquired Mandiant January 2, 2014
@@ -60,6 +64,7 @@ I reported to the development manager who owned the second generation network se
 * Infrastructure and platform service reliability engineering
 
 <br>
+
 **Senior Systems Administrator - [Mandiant](http://www.mandiant.com)** / February 2012 - January 2014<br>
 
 Our team built infrastructure that enabled security professionals to drive incident response and managed services for<br>
@@ -75,6 +80,7 @@ teams providing  guidance on building production ready services and deployment o
 * FreeBSD & Linux systems administration
 
 <br>
+
 **Credentials**<br>
 
 * (ISC)2 Certified Information Systems Security Professional (CISSP)
@@ -82,5 +88,6 @@ teams providing  guidance on building production ready services and deployment o
 * CompTIA Security+ & Network+
 
 <br>
+
 <a href="/files/eric_holzbach.pdf"><i class="fa fa-file-pdf-o fa-4x"></i></a>
 

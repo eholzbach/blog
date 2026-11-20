@@ -27,7 +27,7 @@ The commands to migrate are simple.
 newfs /dev/ad1s1a
 mount /dev/ad1s1a /mnt
 cd /mnt
-dump 0afL - / | restore rf -</blockquote>
+dump 0afL - / | restore rf -
 ```
 
 This was to move my root partition. Take note the L argument for dumping from a live file system. Follow the same process to dump usr, tmp, and var, piping them to their new location. Edit fstab on the new drive to correctly reflect where it is or will be. Shutdown the machine, remove your failing disk, boot into your migrated installation, and enjoy not having to reinstall or configure anything.

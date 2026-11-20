@@ -57,7 +57,7 @@ While this is no substitution for a real debugging instance, this makes it trivi
 30c30
 < push ecx
  --
-> push eax</pre></blockquote>
+> push eax
 ```
 and execute it with truss:
 ```bash

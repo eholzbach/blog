@@ -16,7 +16,9 @@ This was a loose project. The tor service was periodically restarted to adjust b
 **Network data and statistics**
 
 
-<a href="/img/master-protocol1.png"><img class="alignleft size-medium wp-image-658" title="master-protocol1" src="/img/master-protocol1-300x225.png" alt="Tor traffic - protocol" width="300" height="225" /></a> Here is a basic plot of the traffic passed through the node displayed by protocol. A point on the graph was charted every 60 seconds for the full duration of the capture. As you can see, the majority of traffic is tcp bound, with a few noted events.
+<a href="/img/master-protocol1.png"><img class="alignleft size-medium wp-image-658" title="master-protocol1" src="/img/master-protocol1-300x225.png" alt="Tor traffic - protocol" width="300" height="225" /></a>
+
+Here is a basic plot of the traffic passed through the node displayed by protocol. A point on the graph was charted every 60 seconds for the full duration of the capture. As you can see, the majority of traffic is tcp bound, with a few noted events.
 
 Capinfos provided us with information on the consolidated file we are working with:
 <blockquote>
@@ -41,7 +43,9 @@ MD5: 4f4b779eca2f7b0919f311a6101a9f4d
 Strict time order: True</pre>
 </blockquote>
 
-<a href="/img/through00.png"><img class="alignright size-medium wp-image-669" title="through00" src="/img/through00-300x225.png" alt="" width="300" height="225" /></a>A quick break down of the top 20 port destinations. Please note port 25 would have ranked at the top of the list had I had allowed outbound connections from the node. It was blocked after the first few hours to deny spam sources from dumping to open or compromised smtp relays. Several USA based "marketing companies" attempted to push large amounts of data through the node, only to give up days later, likely when their click through rates plummeted.
+<a href="/img/through00.png"><img class="alignright size-medium wp-image-669" title="through00" src="/img/through00-300x225.png" alt="" width="300" height="225" /></a>
+
+A quick break down of the top 20 port destinations. Please note port 25 would have ranked at the top of the list had I had allowed outbound connections from the node. It was blocked after the first few hours to deny spam sources from dumping to open or compromised smtp relays. Several USA based "marketing companies" attempted to push large amounts of data through the node, only to give up days later, likely when their click through rates plummeted.
 <blockquote>
 <pre>1383530   4443  tor
 993860      80  http
@@ -64,6 +68,7 @@ Strict time order: True</pre>
 50491    41416  assumed torrent
 48019       22  ssh</pre>
 </blockquote>
+
 Tor and http traffic beat out torrents for the number of connections made, though I did not do full bandwidth analysis by port. The majority of the traffic was being passed to another relay, despite being an exit node.
 
 **IP address pool and geolocation**
@@ -372,6 +377,7 @@ ultimate-tracker.com
 vap1den1.lijit.com
 ya.ru</pre>
 </blockquote>
+
 I receive s all for horrible content which should never be watched, much less purchased. Save your life. Go outside.
 <blockquote>
 <pre>NBC Universal Anti-Piracy Technical Operations
@@ -386,6 +392,7 @@ I receive s all for horrible content which should never be watched, much less pu
  Infringed Work: The Last Airbender
  Infringed Work: Get Rich or Die Tryinrent</pre>
 </blockquote>
+
 The server hosted no websites besides the [provided html explaining what its function was](https://gitweb.torproject.org/tor.git/blob_plain/HEAD:/contrib/tor-exit-notice.html), therefore received zero legded granularity to view the relentless brute force attacks and various vulnerability and information gathering scans which happens on production servers, with minimal effort to filter out legitimate traffic.
 
 The public facing services were ssh, dns, and h8 login attempts against ssh. These are the top 20, sorted by attempts, ip address and rdns if available.
@@ -403,7 +410,11 @@ The public facing services were ssh, dns, and h8 login attempts against ssh. The
                     aciexpress.net
                     doora.co.kr
                     aicworld.co.kr
+</pre>
+</blockquote>
 
+<blockquote>
+<pre>
 1086 -130-67.nyc.biz.rr.com
 540 84.18.136.164   84-18-136-164.ip.bkom.it
 540 61.19.85.154
@@ -419,6 +430,7 @@ The public facing services were ssh, dns, and h8 login attempts against ssh. The
 94 58.18.172.206
 86 24.232.23.26     mailer.mercovan.com.ar</pre>
 </blockquote>
+
 Apache received some scans for open and vulnerable webnd rdns if available, followed by the top 20 items checked.
 <blockquote>
 <pre>250 212.27.195.114
@@ -429,7 +441,11 @@ Apache received some scans for open and vulnerable webnd rdns if available, foll
  10 77.221.159.18  77.221.159.18.addr.datapoint.ru
  10 63.247.194.2   mail.o-flynn.com
  10 212.29.174.34  smtp2.alphit.nl
+</pre>
+</blockquote>
 
+<blockquote>
+<pre>
  21 phpmyadmin
  17 deny2
  17 appConf.htm
@@ -448,6 +464,7 @@ Apache received some scans for open and vulnerable webnd rdns if available, foll
   4 hp
   4 databaseadmin</pre>
 </blockquote>
+
 Reviewing the network graphs you may notice the spike in packets due to an inbound denial of service attack. It was from a single ip.to DoS a tor exit node from a single ip is beyond me.
 
 **Conclusion**

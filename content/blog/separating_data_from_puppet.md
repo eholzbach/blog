@@ -77,17 +77,20 @@ There are a few [different ways that hiera can fill in variables](http://docs.pu
     name   => $ssh_pkgs,
   }
 </pre>
+
 <pre>  package { 'crond':
     ensure => installed,
     name   => $cron_name,
   }
 </pre>
+
 <pre>  service { 'cron_daem':
     ensure  => running,
     name    => $cron_daem,
     enable  => true,
   }
 </pre>
+
 The puppet code has now been un-f\*cked to support [s/all/most](http://en.wikipedia.org/wiki/Sed) of your environments. Hiera has made our manifest more portable, easier to read, easier to maintain, and has expanded the data set available to other modules.
 
 Go pat yourself on the back for reducing complexity and bloat. Try not to get stabbed on the way out the door.

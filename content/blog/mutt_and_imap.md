@@ -12,116 +12,147 @@ First things first, I still float between [joe](http://joe-editor.sourceforge.ne
 
 Install vim and correct its backspace to the expected behavior of delete character, instead of just moving the cursor.
 
-> pkg_add -r vim<br>
+```
+pkg_add -r vim
+```
 
 
 Now for the sake of insecurity and simplicity, recompile openssl from the ports with "Build with [MD2 hash (obsolete)](http://en.wikipedia.org/wiki/MD2_(cryptography)) legacy support as it will error without it. You will most likely need to reconfigure the installation options for the port as it has either already been configured without, or never configured at all from installing from a package. Also confirm you have cyrsus-sasl2 installed.
 
-> cd /usr/ports/security/openssl ; make config<br>
-> make deinstall ; make install clean<br>
-> pkg_add -r cyrus-sasl2
+```
+cd /usr/ports/security/openssl ; make config
+make deinstall ; make install clean
+pkg_add -r cyrus-sasl2
+```
 
 Install mutt and aspell, unless your a spelling wizard or like the clunky ispell. Configure mutt as you like, but I prefer the mutt-devel port with the sidebar patch, and cyrus-sasl2 enabled from the configuration menu.
 
-> cd /usr/ports/mail/mutt-devel ; make install clean<br>
-> pkg_add -r aspell
+```
+cd /usr/ports/mail/mutt-devel ; make install clean
+pkg_add -r aspell
+```
 
 Configure mutt to use your imap account and create cache directories. Please note my configuration may be horribly malformed, redundant, and stupid. Please also note I have only skimmed the manpages for the software, and this functions for me, though I am an idiot.
 
-> mkdir ~/.mutt ; mkdir ~/.mutt/cache
+```
+mkdir ~/.mutt ; mkdir ~/.mutt/cache
+```
 
-> set from = "your.email@your-stupid-domain.com"<br>
-> set realname = "John doe"<br>
-> set imap_user = "your.email@your-stupid-domain.com"<br>
-> set folder = "imaps://mail.your-stupid-domain.com:993"<br>
-> set spoolfile = "+INBOX"<br>
-> set postponed ="+[INBOX]/Drafts"<br>
-> set copy = yes<br>
-> set record="imaps://mail.your-stupid-domain.com/INBOX/Sent"<br>
-> set header_cache =~/.mutt/cache/headers<br>
-> set message_cachedir =~/.mutt/cache/bodies<br>
-> set certificate_file =~/.mutt/certificates<br>
-> set smtp_url = "smtps://your.email@your-stupid-domain.com@mail.your-stupid-domain.com:465"<br>
-> set ssl_force_tls = yes<br>
-> set sort = threads<br>
-> set editor = vim<br>
-> set ispell="aspell -e -c"<br>
-> set timeout=15
-> set mail_check=600<br><br>
-> \# set up the sidebar, default not visible<br>
-> set sidebar_width=24<br>
-> set sidebar_visible=yes<br>
-> set sidebar_delim='|'<br>
-> set sidebar_sort=yes<br><br>
-> \# which mailboxes to list in the sidebar<br>
-> set imap_check_subscribed=yes<br>
-> \# color of folders with new mail<br>
-> color sidebar_new yellow default<br><br>
-> \# ctrl-n, ctrl-p to select next, prev folder<br>
-> \# ctrl-o to open selected folder<br>
-> bind index \CP sidebar-prev<br>
-> bind index \CN sidebar-next<br>
-> bind index \CO sidebar-open<br>
-> bind pager \CP sidebar-prev<br>
-> bind pager \CN sidebar-next<br>
-> bind pager \CO sidebar-open<br><br>
-> color hdrdefault yellow black<br>
-> color quoted white black<br>
-> color signature green black<br>
-> color attachment red black<br>
-> color message brightred black<br>
-> color error brightred black<br>
-> color indicator black red<br>
-> color status brightgreen blue<br>
-> color tree white black<br>
-> color normal white black<br>
-> color markers red black<br>
-> color search white black<br>
-> color tilde brightmagenta black<br>
-> color index blue black ~F<br>
-> color index red black "~N|~O"
+```
+set from = "your.email@your-stupid-domain.com"
+set realname = "John doe"
+set imap_user = "your.email@your-stupid-domain.com"
+set folder = "imaps://mail.your-stupid-domain.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[INBOX]/Drafts"
+set copy = yes
+set record="imaps://mail.your-stupid-domain.com/INBOX/Sent"
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+set smtp_url = "smtps://your.email@your-stupid-domain.com@mail.your-stupid-domain.com:465"
+set ssl_force_tls = yes
+set sort = threads
+set editor = vim
+set ispell="aspell -e -c"
+set timeout=15
+set mail_check=600
+
+# set up the sidebar, default not visible
+set sidebar_width=24
+set sidebar_visible=yes
+set sidebar_delim='|'
+set sidebar_sort=yes
+
+# which mailboxes to list in the sidebar
+set imap_check_subscribed=yes
+# color of folders with new mail
+color sidebar_new yellow default
+
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index \CP sidebar-prev
+bind index \CN sidebar-next
+bind index \CO sidebar-open
+bind pager \CP sidebar-prev
+bind pager \CN sidebar-next
+bind pager \CO sidebar-open
+
+color hdrdefault yellow black
+color quoted white black
+color signature green black
+color attachment red black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightgreen blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
+```
 
 Now on to [imapfilter](https://github.com/lefcha/imapfilter). It is a [lua](http://www.lua.org/) application, which is a bit annoying. It's the only reason I have lua (a "fad" programming language that will fall to the side) installed on my system. Unfortunately there is no package or port available. Extract the tarball and edit the configuration file to reflect where the required libraries and includes headers reside on FreeBSD. Change:
 
-> incdirs="-I/usr/local/include"<br>
-> libdirs="-L/usr/local/lib"
+```
+incdirs="-I/usr/local/include"
+libdirs="-L/usr/local/lib"
+```
 
 to:
 
-> incdirs="-I/usr/local/include -I/usr/local/include/lua51"<br>
-> libdirs="-L/usr/local/lib -L/usr/local/lib/lua51"
+```
+incdirs="-I/usr/local/include -I/usr/local/include/lua51"
+libdirs="-L/usr/local/lib -L/usr/local/lib/lua51"
+```
 
 Now run "./configure", then "make", then "make install", hopefully  without issue.
 
 Set up the directory and configuration file.
 
-> mkdir ~/.imapfilter ; touch ~/.imapfilter/config.lua
+```
+mkdir ~/.imapfilter ; touch ~/.imapfilter/config.lua
+```
 
 Add the relevant account information, and hack out your filters. Review the imapfilter_config manpage for the desired sorting variables. A basic configuration would be the following.
 
-> account1 = IMAP {<br>
-> server = 'mail.your-stupid-domain.com',<br>
-> username = 'your.email@your-stupid-domain.com',<br>
-> password = 'your email password',<br>
-> ssl = 'ssl3'<br>
-> }<br><br>
-> deletespam = account1.INBOX:contain_subject('SPAM')<br>
-> account1.INBOX:delete_messages(deletespam)<br><br>
-> filter<br><br>
-> another filter<br><br>
-> another filter<br><br>
-> and more filters.
+```
+account1 = IMAP {
+server = 'mail.your-stupid-domain.com',
+username = 'your.email@your-stupid-domain.com',
+password = 'your email password',
+ssl = 'ssl3'
+}
+
+deletespam = account1.INBOX:contain_subject('SPAM')
+account1.INBOX:delete_messages(deletespam)
+
+filter
+
+another filter
+
+another filter
+
+and more filters.
+```
 
 You just committed an evil sin. Email password saved to a file in plain text. Never recommended, much less on a multi user system. Please confirm your file permissions, and keep in mind any computer powered on is not to be trusted.
 
 All that is left is to install a cronjob to have imapfilter shuffle your messages every ten minutes.
 
-> crontab -e
+```
+crontab -e
+```
 
 and install the cronjob:
 
-> */10 * * * *  /usr/local/bin/imapfilter -c /home/username/.imapfilter/config.lua > /dev/null 2>&amp;1
+```
+*/10 * * * *  /usr/local/bin/imapfilter -c /home/username/.imapfilter/config.lua > /dev/null 2>&1
+```
 
 Now we have a lovely functional console replacement for thunderbird that looks like this:
 
-<a href="/img/mutt2.png"><img align="left" title="mutt" src="/img/mutt1.png" alt="mutt width="300" height="225" /></a>
+<a href="/img/mutt2.png"><img align="left" title="mutt" src="/img/mutt1.png" alt="mutt" width="300" height="225" /></a>

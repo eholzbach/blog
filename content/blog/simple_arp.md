@@ -36,7 +36,7 @@ Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.91 0:16:17:
 Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.90 0:16:17:28:b2:8d (78:2b:cb:8:6c:d8)
 Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.89 0:16:17:28:b2:8d (78:2b:cb:3a:3c:88)
 Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.88 0:16:17:28:b2:8d (78:2b:cb:19:ba:d7)
-Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.87 0:16:17:28:b2:8d (78:2b:cb:19:ba:d7)</blockquote>
+Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.87 0:16:17:28:b2:8d (78:2b:cb:19:ba:d7)
 ```
 
 Such large numbers are a clear indicator 0:16:17:28:b2:8d is the attacker. If the tool has been running for a while the arp.dat file will be populated with data. One entry per line formatted by mac address, ip address, time of last change in [unix epoch](http://en.wikipedia.org/wiki/Unix_time), and resolved hostname if available. Now simply grep the data file for the suspected attacker:
