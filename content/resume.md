@@ -4,7 +4,19 @@ date: "2010-12-20T01:04:00-07:00"
 nodate: "true"
 nopaging: "true"
 ---
-**Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - Current<br>
+**Director, Infrastructure - [SpecterOps](https://www.specterops.io)** / January 2021 – Current<br>
+
+SpecterOps provided the opportunity of a greenfield architecture & implementation of infrastructure for BloodHound Enterprise.<br>
+I built the development and and production environments needed to go to market. I spent my first year operating autonomously<br>
+as a Principal Infrastructure Engineer. I’ve since grown the infrastructure team, allowing my focus to expand within the company.<br>
+
+* Manager of infrastructure team
+* AWS architecture & environment implementation
+* Maintaining development and production environments for a SaaS product and other offerings
+* Development in Go
+
+<br>
+**Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - December 2020<br>
 
 Gigamon acquired Icebrg July, 2018
 
@@ -16,7 +28,7 @@ Gigamon acquired Icebrg July, 2018
 **Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018<br>
 
 I joined ICEBRG early in the start up phase as the sixth member of engineering, independently taking on responsibilities<br>
-for all aspects of the companies infrastructure. This included the products environments and data stores, substrate<br>
+for all aspects of the companies infrastructure. My team built the product environment, data stores, substrate<br>
 infrastructure, networking, authentication and access controls.<br>
 
 * Infrastructure architecture, responsible for all physical and AWS environments
@@ -63,27 +75,11 @@ teams providing  guidance on building production ready services and deployment o
 * FreeBSD & Linux systems administration
 
 <br>
-**Linux Systems Administrator - [InMotion Hosting](http://www.inmotionhosting.com)** / August 2010 - February 2012<br>
-
-I joined a small team responsible for all aspects of thousands of production Linux web hosts in shared, virtualized and<br>
-dedicated platforms across multiple data centers.<br>
-
-* QoS management in a densely provisioned environment
-* Bare metal, Virtuozzo, and shared CPanel hosting
-* Monitoring and management of systems and supporting services
-* Network and host intrusion detection, incident response
-* PCI-DSS audit & resolution
-* Provisioning of physical servers and switches
-* 24/7 on call rotation for systems administration and data center maintenance
-* Customer service support
-
-<br>
 **Credentials**<br>
 
 * (ISC)2 Certified Information Systems Security Professional (CISSP)
 * Puppet Certified Professional
-* CompTIA Security+
-* CompTIA Network+
+* CompTIA Security+ & Network+
 
 <br>
 <a href="/files/eric_holzbach.pdf"><i class="fa fa-file-pdf-o fa-4x"></i></a>
