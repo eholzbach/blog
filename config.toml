@@ -1,42 +1,54 @@
 baseurl = "https://www.ericholzbach.net/"
 locale = "en-us"
 title = "Unix Blather"
-theme = "redlounge"
+theme = "archie"
+
 [params]
-    sidebartitle = "Unix Blather"
-    sidebartagline = "...or whatever."
-    sidebarphoto = "/img/squid4.png"
+mode = "auto"
+useCDN = false
+subtitle = "...or whatever."
+favicon = "/img/favicon.png"
+mainSections = ["posts"]
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://www.github.com/eholzbach"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://www.linkedin.com/pub/eric-holzbach/45/527/680"
+
+[[params.social]]
+name = "Flickr"
+icon = "simple:flickr"
+url = "https://www.flickr.com/photos/respite"
+
+[[params.social]]
+name = "Strava"
+icon = "simple:strava"
+url = "https://www.strava.com/athletes/eholzbach"
 
 [[menu.main]]
-    name = "Resume"
-    url = "/resume"
+name = "Home"
+url = "/"
+weight = 1
 
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 2
 
-[[menu.social]]
-    pre = "<i class='fa fa-github-alt fa-lg'></i>"
-    url = "https://www.github.com/eholzbach"
-    identifier = "github"
-[[menu.social]]
-    pre = "<i class='fa fa-linkedin fa-lg'></i>"
-    url = "https://www.linkedin.com/pub/eric-holzbach/45/527/680"
-    identifier = "linkedin"
-[[menu.social]]
-    pre = "<i class='fa fa-twitter fa-lg'></i>"
-    url = "https://www.twitter.com/eric_holzbach"
-    identifier = "twitter"
-[[menu.social]]
-    pre = "<i class='fa fa-camera-retro fa-lg'></i>"
-    url = "https://www.flickr.com/photos/respite"
-    identifier = "flickr"
-[[menu.social]]
-    pre = "<i class='fa fa-spotify fa-lg'></i>"
-    url = "https://open.spotify.com/user/ericholzbach"
-    identifier = "spotify"
-[[menu.social]]
-    pre = "<i class='fa fa-bicycle fa-lg'></i>"
-    url = "https://www.strava.com/athletes/eholzbach"
-    identifier = "strava"
+[[menu.main]]
+name = "Archive"
+url = "/blog/"
+weight = 3
 
+[[menu.main]]
+name = "Resume"
+url = "/resume/"
+weight = 4
 
 [markup.goldmark.renderer]
-    unsafe = true
+unsafe = true

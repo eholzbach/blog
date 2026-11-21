@@ -4,11 +4,11 @@ date: "2010-12-20T01:04:00-07:00"
 nodate: "true"
 nopaging: "true"
 ---
-**Director, Infrastructure - [SpecterOps](https://www.specterops.io)** / January 2021 – Current<br>
+**Director, Infrastructure - [SpecterOps](https://www.specterops.io)** / January 2021 – Current
 
-SpecterOps provided the opportunity of a greenfield architecture & implementation of infrastructure for BloodHound Enterprise.<br>
-I built the development and production environments needed to go to market. I spent my first year operating autonomously<br>
-as a Principal Infrastructure Engineer. My focus later expanded, bootstrapping multiple internal projects.<br>
+SpecterOps provided the opportunity of a greenfield architecture & implementation of infrastructure for BloodHound Enterprise.
+I built the development and production environments needed to go to market. I spent my first year operating autonomously
+as a Principal Infrastructure Engineer. My focus later expanded, bootstrapping multiple internal projects.
 
 * Manager of infrastructure team
 * AWS architecture & environment implementation
@@ -17,7 +17,7 @@ as a Principal Infrastructure Engineer. My focus later expanded, bootstrapping m
 
 <br>
 
-**Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - December 2020<br>
+**Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - December 2020
 
 Gigamon acquired Icebrg in July of 2018
 
@@ -27,11 +27,11 @@ Gigamon acquired Icebrg in July of 2018
 
 <br>
 
-**Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018<br>
+**Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018
 
-I joined ICEBRG early in the start up phase as the sixth member of engineering, independently taking on responsibilities<br>
-for all aspects of the company's infrastructure. My team built the product environment, data stores, substrate<br>
-infrastructure, networking, authentication and access controls.<br>
+I joined ICEBRG early in the start up phase as the sixth member of engineering, independently taking responsibility
+for the company's infrastructure. My team built the product environment, data stores, substrate infrastructure,
+networking, authentication and access controls.
 
 * Infrastructure architecture, responsible for all physical and AWS environments
 * Management of distributed databases at scale, Elasticsearch and Hadoop
@@ -43,9 +43,9 @@ infrastructure, networking, authentication and access controls.<br>
 
 <br>
 
-**Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015<br>
+**Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015
 
-Our team managed network and systems access controls for the products production infrastructure spanning data centers around the world.<br>
+Our team managed network and systems access controls for the products production infrastructure spanning data centers around the world.
 
 * Design & implementation of security controls for production infrastructure
 * Management of authentication and authorization systems
@@ -53,24 +53,24 @@ Our team managed network and systems access controls for the products production
 
 <br>
 
-**Senior Configuration Engineer - [FireEye Inc.](http://www.fireeye.com)** / February 2014 - January 2015<br>
+**Senior Configuration Engineer - [FireEye Inc.](http://www.fireeye.com)** / February 2014 - January 2015
 
 FireEye Inc. acquired Mandiant in January of 2014
 
-I changed teams to remove break fix systems administration responsibilities, enabling me to focus efforts on systems and stack tuning.<br>
-I reported to the development manager who owned the second generation network sensor platform.<br>
+I changed teams to remove break fix systems administration responsibilities, enabling me to focus efforts on systems and stack tuning.
+I reported to the development manager who owned the second generation network sensor platform.
 
 * Deployment automation & orchestration, Puppet development
 * Infrastructure and platform service reliability engineering
 
 <br>
 
-**Senior Systems Administrator - [Mandiant](http://www.mandiant.com)** / February 2012 - January 2014<br>
+**Senior Systems Administrator - [Mandiant](http://www.mandiant.com)** / February 2012 - January 2014
 
-Our team built infrastructure that enabled security professionals to drive incident response and managed services for<br>
-our customers. I was responsible for managing network sensors, endpoint agent controllers, a multi platform distributed<br>
-malware analysis system and other production services to support SOC analysts. I worked closely with multiple development<br>
-teams providing guidance on building production ready services and deployment options.<br>
+Our team built infrastructure that enabled security professionals to drive incident response and managed services for
+our customers. I was responsible for managing network sensors, endpoint agent controllers, a multi platform distributed
+malware analysis system and other production services to support SOC analysts. I worked closely with multiple development
+teams providing guidance on building production ready services and deployment options.
 
 * Implementation and management of internal and customer facing production infrastructure
 * Deployment automation & configuration management
@@ -81,7 +81,7 @@ teams providing guidance on building production ready services and deployment op
 
 <br>
 
-**Credentials**<br>
+**Credentials**
 
 * (ISC)2 Certified Information Systems Security Professional (CISSP)
 * Puppet Certified Professional
@@ -89,5 +89,4 @@ teams providing guidance on building production ready services and deployment op
 
 <br>
 
-<a href="/files/eric_holzbach.pdf"><i class="fa fa-file-pdf-o fa-4x"></i></a>
-
+[Download resume (PDF)](/files/eric_holzbach.pdf)
