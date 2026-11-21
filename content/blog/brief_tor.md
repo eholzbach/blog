@@ -4,7 +4,7 @@ title: "A brief analysis of a tor exit node"
 slug: "a-brief-analysis-of-a-tor-exit-node"
 ---
 
-There is no doubt of the intentions of the tor project, though I've always wondered who most commonly uses it, and what kinds of traffic are they shuffling through it. In the event you're are unfamiliar with the [tor project](http://www.torproject.org/), it is a relay of encrypted proxies you may pass your network traffic through with the hopes of maintaining anonymity. You may find an in depth explanation of [what tor is, how it works, and why it exist, here](http://www.torproject.org/about/overview.html.en).
+There is no doubt of the intentions of the tor project, though I've always wondered who most commonly uses it, and what kinds of traffic are they shuffling through it. In the event you're unfamiliar with the [tor project](http://www.torproject.org/), it is a relay of encrypted proxies you may pass your network traffic through with the hopes of maintaining anonymity. You may find an in depth explanation of [what tor is, how it works, and why it exists, here](http://www.torproject.org/about/overview.html.en).
 
 I recently set up a [tor exit node](https://gitweb.torproject.org/tor.git/blob_plain/HEAD:/contrib/tor-exit-notice.html) for analysis of what typically happens on the network. This is in no way meant to be considered conclusive data of its typical activities. There are far too many variables in a distributed network to accept any of this data as the status quo. Geographic location, throughput, bandwidth, and political boundaries all influence the shape of an exit node. A user of tor may configure what country their traffic stays in, and where it may exit. A tor user in the united states who only wishes to avoid [dmca](http://en.wikipedia.org/wiki/Digital_Millennium_Copyright_Act) complaints from their isp for seeding torrents of pirated movies are  more likely to configure their client to only pass through relays within the same country for the fastest network performance. A typical user in a country who is censored by their government and has no [freedom of speech or rights to information](http://en.wikipedia.org/wiki/Censorship_in_the_People's_Republic_of_China) is more likely to configure their client to pass through unrestricted countries.
 
@@ -280,7 +280,7 @@ Tor and http traffic beat out torrents for the number of connections made, thoug
 **Security notes and inbound attack data**
 
 
-There 515 instances of credentials passed in clear text through this tor relay, 92 were unique. 79 were passed over http, 9 snmp, and 4 pop. There was also a wealth of sensitive data disclosed in url's and cookies. The following list if of web hosts the clear text credentials were forked to. The majority of which are torrent trackers. The frequency of yahoo is due to their web applications passing data in the clear, not a sign of its popularity.
+There were 515 instances of credentials passed in clear text through this tor relay, 92 were unique. 79 were passed over http, 9 snmp, and 4 pop. There was also a wealth of sensitive data disclosed in url's and cookies. The following list is of web hosts the clear text credentials were forked to. The majority of which are torrent trackers. The frequency of yahoo is due to their web applications passing data in the clear, not a sign of its popularity.
 <blockquote>
 <pre>02.ah127.in
 02.ahr3.in
@@ -378,7 +378,7 @@ vap1den1.lijit.com
 ya.ru</pre>
 </blockquote>
 
-I receive s all for horrible content which should never be watched, much less purchased. Save your life. Go outside.
+I received several DMCA take down notices. All for horrible content which should never be watched, much less purchased. Save your life. Go outside.
 <blockquote>
 <pre>NBC Universal Anti-Piracy Technical Operations
  Title: American Pie Presents: The Naked Mile
@@ -393,9 +393,9 @@ I receive s all for horrible content which should never be watched, much less pu
  Infringed Work: Get Rich or Die Tryinrent</pre>
 </blockquote>
 
-The server hosted no websites besides the [provided html explaining what its function was](https://gitweb.torproject.org/tor.git/blob_plain/HEAD:/contrib/tor-exit-notice.html), therefore received zero legded granularity to view the relentless brute force attacks and various vulnerability and information gathering scans which happens on production servers, with minimal effort to filter out legitimate traffic.
+The server hosted no websites besides the [provided html explaining its function](https://gitweb.torproject.org/tor.git/blob_plain/HEAD:/contrib/tor-exit-notice.html). It received the relentless brute force attacks and various vulnerability and information gathering scans.
 
-The public facing services were ssh, dns, and h8 login attempts against ssh. These are the top 20, sorted by attempts, ip address and rdns if available.
+These are the top 20, sorted by attempts, ip address and rdns if available.
 <blockquote>
 <pre>6043 115.41.239.142
 5454 212.43.68.10   dns-2.witcom.de
@@ -431,7 +431,6 @@ The public facing services were ssh, dns, and h8 login attempts against ssh. The
 86 24.232.23.26     mailer.mercovan.com.ar</pre>
 </blockquote>
 
-Apache received some scans for open and vulnerable webnd rdns if available, followed by the top 20 items checked.
 <blockquote>
 <pre>250 212.27.195.114
 153 64.27.7.2      unassigned.calpop.com
@@ -465,11 +464,11 @@ Apache received some scans for open and vulnerable webnd rdns if available, foll
   4 databaseadmin</pre>
 </blockquote>
 
-Reviewing the network graphs you may notice the spike in packets due to an inbound denial of service attack. It was from a single ip.to DoS a tor exit node from a single ip is beyond me.
+Reviewing the network graphs you may notice the spike in packets due to an inbound denial of service attack. It was from a single ip. Why anyone would attempt a DoS attack on a tor exit node from a single ip is beyond me.
 
 **Conclusion**
 
-The tor exit node was mostly used for the networks intended purpose. Maintaining anonymity on the internet. Despite relatively minor abuse, there was nothing else going on.r more boring than ever expected. I leave you with a list of government ip addresses taken after the packet capture. At least the though of some shady government performing some shady action, or some rebellious government employee performing a clandestine l is interesting. Unfortunately, they were just using tor to bypass their offices access control list, and hit facebook from work. A sad state of affairs.
+The tor exit node was mostly used for the networks intended purpose. Maintaining anonymity on the internet. Despite relatively minor abuse, there was nothing else going on. It was more boring than I expected. I leave you with a list of government ip addresses taken after the packet capture. At least the thought of some shady government performing some shady action, or some rebellious government employee performing a clandestine operation is interesting. Unfortunately, they were just using tor to bypass their offices access control list, and hit facebook from work. A sad state of affairs.
 <blockquote>
 <pre>111.68.97.90.hec.gov.pk.
 199.159.99.34.4k.usda.gov.

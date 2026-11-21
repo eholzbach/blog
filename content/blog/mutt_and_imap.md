@@ -8,7 +8,7 @@ I generally prefer to use [console applications](http://en.wikipedia.org/wiki/Co
 
 I've always used [pine](http://en.wikipedia.org/wiki/Pine_(e-mail_client)), and later [alpine](http://en.wikipedia.org/wiki/Alpine_(e-mail_client)), as a mail client due to its overwhelming popularity and ease of use. The downfall is its [imap](http://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) support is less than desirable, and [ssl certificates](http://en.wikipedia.org/wiki/Secure_Sockets_Layer) require a manual install, no prompt to retain. Archaic. While alpine does include support for message filtering, they have to be run manually. Not an ideal solution for someone who requires sorted imap folders from remote devices. I'm a curmudgeon and resistant to change for things that are not necessarily broken. Since I was setting up [imapfilters](https://github.com/lefcha/imapfilter) to handle the sorting, and finally took the time to try out [mutt](http://www.mutt.org/). I've always heard good things about the client, and it carries the author quoted philosophy I can relate to.
 
-First things first, I still float between [joe](http://joe-editor.sourceforge.net), [bsd vi](http://en.wikipedia.org/wiki/Vi), and [vim](http://en.wikipedia.org/wiki/Vim_(text_editor)) as text editors, though have been drifting to vim lately as it's the de facto editor in my current employers environment. It was only logical to set it as the default editor for mutt.
+First things first, I still float between [joe](http://joe-editor.sourceforge.net), [bsd vi](http://en.wikipedia.org/wiki/Vi), and [vim](http://en.wikipedia.org/wiki/Vim_(text_editor)) as text editors, though have been drifting to vim lately as it's the de facto editor in my current employer's environment. It was only logical to set it as the default editor for mutt.
 
 Install vim and correct its backspace to the expected behavior of delete character, instead of just moving the cursor.
 
@@ -17,7 +17,7 @@ pkg_add -r vim
 ```
 
 
-Now for the sake of insecurity and simplicity, recompile openssl from the ports with "Build with [MD2 hash (obsolete)](http://en.wikipedia.org/wiki/MD2_(cryptography)) legacy support as it will error without it. You will most likely need to reconfigure the installation options for the port as it has either already been configured without, or never configured at all from installing from a package. Also confirm you have cyrsus-sasl2 installed.
+Now for the sake of insecurity and simplicity, recompile openssl from the ports with "Build with [MD2 hash (obsolete)](http://en.wikipedia.org/wiki/MD2_(cryptography)) legacy support as it will error without it. You will most likely need to reconfigure the installation options for the port as it has either already been configured without, or never configured at all from installing from a package. Also confirm you have cyrus-sasl2 installed.
 
 ```
 cd /usr/ports/security/openssl ; make config
@@ -25,7 +25,7 @@ make deinstall ; make install clean
 pkg_add -r cyrus-sasl2
 ```
 
-Install mutt and aspell, unless your a spelling wizard or like the clunky ispell. Configure mutt as you like, but I prefer the mutt-devel port with the sidebar patch, and cyrus-sasl2 enabled from the configuration menu.
+Install mutt and aspell, unless you're a spelling wizard or like the clunky ispell. Configure mutt as you like, but I prefer the mutt-devel port with the sidebar patch, and cyrus-sasl2 enabled from the configuration menu.
 
 ```
 cd /usr/ports/mail/mutt-devel ; make install clean

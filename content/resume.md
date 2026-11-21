@@ -8,7 +8,7 @@ nopaging: "true"
 
 SpecterOps provided the opportunity of a greenfield architecture & implementation of infrastructure for BloodHound Enterprise.<br>
 I built the development and production environments needed to go to market. I spent my first year operating autonomously<br>
-as a Principal Infrastructure Engineer. I’ve since grown the infrastructure team, allowing my focus to expand within the company.<br>
+as a Principal Infrastructure Engineer. My focus later expanded, bootstrapping multiple internal projects.<br>
 
 * Manager of infrastructure team
 * AWS architecture & environment implementation

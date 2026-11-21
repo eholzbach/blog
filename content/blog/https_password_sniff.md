@@ -46,7 +46,7 @@ Edit /usr/local/etc/etter.conf to adjust the privileges which are default to 65
 > redir_command_on = "ipfw add fwd 127.0.0.1,%rport tcp from any to any %port in via %iface"<br>
 > redir_command_off = "ipfw -q flush"
 
-Now you're ready to fire up your tools and skiddie away.  Ettercap doesn't care what flavor of switched network your on, just be sure to specify the interface. Smaller wireless networks where there is only basic web traffic I tend to just man in the middle everyone. Remember you can down the network, and DoS yourself with this as you're dealing with everyone's traffic. What is great about ettercap for sniffing ssl connections is it creates the fake certificates on the fly, entering the correct content with the incorrect issuer. People straight up ignore the invalid certificate and warnings their browser provides.
+Now you're ready to fire up your tools and skiddie away.  Ettercap doesn't care what flavor of switched network you're on, just be sure to specify the interface. Smaller wireless networks where there is only basic web traffic I tend to just man in the middle everyone. Remember you can down the network, and DoS yourself with this as you're dealing with everyone's traffic. What is great about ettercap for sniffing ssl connections is it creates the fake certificates on the fly, entering the correct content with the incorrect issuer. People straight up ignore the invalid certificate and warnings their browser provides.
 
 > ettercap -T -q -i wlan0 -l etterout.txt -M ARP // //
 

@@ -45,6 +45,6 @@ grep 0:16:17:28:b2:8d /usr/local/arpwatch/arp.dat
 0:16:17:28:b2:8d 192.168.1.234 1322536658 rooted-server
 ```
 
-Now you have an ip of the alleged attacker, and can continue with your incident response procedure. If your monitoring before/during the event, large amounts of "changed station" entries will be logged. The utility can be configured to email you of changes, ad can parse data from snmpwalk for easy integration.
+Now you have an ip of the alleged attacker, and can continue with your incident response procedure. If you're monitoring before/during the event, large amounts of "changed station" entries will be logged. The utility can be configured to email you of changes, ad can parse data from snmpwalk for easy integration.
 
-Of course if this doesn't fit your environment,  you can always start flipping through you bandwidth logs until you find the lowly server now being DoS'ed into tomorrow while the rest of your gear is trying to jam 1000Mbs down its nic. What ever works best for you.
+Of course if this doesn't fit your environment,  you can always start flipping through your bandwidth logs until you find the lowly server now being DoS'ed into tomorrow while the rest of your gear is trying to jam 1000Mbps down its nic. What ever works best for you.

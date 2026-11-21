@@ -16,9 +16,9 @@ So why bother? The old adage goes "If you are fluent in assembly, then no progra
 
 The problem with sorting through software compiled from high level languages is the amount of bloat and library garbage you must sift through to view desired routines. Modern tools such as [IDA](http://www.hex-rays.com/products/ida/index.shtml), [OllyDbg](http://www.ollydbg.de), and [Edb](http://codef00.com/projects#debugger) make this job manageable. None of these tools are available on my operating system of choice. [ALD](http://ald.sourceforge.net/) runs on the i386 build of FreeBSD and is available in the ports tree. It has not been updated since 2004 and its work flow is less than ideal. It is still easier to work with than trying to use [gdb](http://www.gnu.org/software/gdb/) on [nasm](http://www.nasm.us/) assembled static binaries.
 
-This does not leave us with much. [FreeBSD](http://www.freebsd.org/) is an operating system written in C, and is open source. The is no widespread need for binary debuggers on this platform.
+This does not leave us with much. [FreeBSD](http://www.freebsd.org/) is an operating system written in C, and is open source. There is no widespread need for binary debuggers on this platform.
 
-If you are familiar with [strace](http://en.wikipedia.org/wiki/Strace) for GNU/Linux systems, you will quickly pick up [truss(1)](http://www.freebsd.org/cgi/man.cgi?query=truss&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+8.2-RELEASE&amp;arch=default&amp;format=html). Both these utilities trace the calls made to the kernel during a programs execution. The following is the truss output of our [example program found here](https://github.com/eholzbach/assembly/blob/master/wipe.asm), making three passes overwriting auth.log before unlinking it from the file system:
+If you are familiar with [strace](http://en.wikipedia.org/wiki/Strace) for GNU/Linux systems, you will quickly pick up [truss(1)](http://www.freebsd.org/cgi/man.cgi?query=truss&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+8.2-RELEASE&amp;arch=default&amp;format=html). Both these utilities trace the calls made to the kernel during a program's execution. The following is the truss output of our [example program found here](https://github.com/eholzbach/assembly/blob/master/wipe.asm), making three passes overwriting auth.log before unlinking it from the file system:
 
 ```bash
 devel:~/asm% truss ./wipe auth.log
@@ -39,7 +39,7 @@ unlink("auth.log") = 0 (0x0)
 process exit, rval = 10
 ```
 
-It is also handy to get a summery of calls made, errors flagged, and total system time used:
+It is also handy to get a summary of calls made, errors flagged, and total system time used:
 ```bash
 devel:~/asm% truss -c ./wipe auth.log
 syscall seconds calls errors
@@ -51,7 +51,7 @@ write 0.000219196 3 0
 
 0.000668230 11 0
 ```
-While this is no substitution for a real debugging instance, this makes it trivial to track down a crash or point of error, assuming you are familiar with your code. I tend to include error checking for almost ever routine and phase it out as development progresses. Without the use of a real debugger this will drastically reduce the time it takes to locate a bug. Lets make the following diff to our example program to produce an error:
+While this is no substitution for a real debugging instance, this makes it trivial to track down a crash or point of error, assuming you are familiar with your code. I tend to include error checking for almost every routine and phase it out as development progresses. Without the use of a real debugger this will drastically reduce the time it takes to locate a bug. Let's make the following diff to our example program to produce an error:
 
 ```bash
 30c30
@@ -67,7 +67,7 @@ fail
 write(1,"fail\n",5) = 5 (0x5)
 process exit, rval = 4
 ```
-We can clearly see the program did not make it very far, failing to open the file we are trying to wipe. So lets take a look at our code:
+We can clearly see the program did not make it very far, failing to open the file we are trying to wipe. So let's take a look at our code:
 
 ```
 _start:
