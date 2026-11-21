@@ -30,7 +30,7 @@ Now download the perl script to interact with the database if you haven't alread
 
 > fetch http://cdnetworks-us-1.dl.sourceforge.net/project/kpcli/kpcli-0.8.pl
 
-If your not a perl person you most likely do not have the needed [cpan modules](http://www.cpan.org/index.html) installed. For my systems I was lacking the following:
+If you're not a perl person you most likely do not have the needed [cpan modules](http://www.cpan.org/index.html) installed. For my systems I was lacking the following:
 
 > /security/p5-Crypt-Rijndael/<br>
 > /textproc/p5-Sort-Naturally/<br>

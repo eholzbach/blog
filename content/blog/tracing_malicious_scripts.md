@@ -24,7 +24,7 @@ How does this happen? Perl makes it simple.
 
 > perl -e '$0 = "/usr/local/sbin/h4x_y3r_f4c3"; system "ps -f $$"'
 
-I must note that gnu/linux systems by default will not tell you its a perl script, and FreeBSD will. The following is the output of the above command first on a linux system, then a FreeBSD system.
+I must note that gnu/linux systems by default will not tell you it's a perl script, and FreeBSD will. The following is the output of the above command first on a linux system, then a FreeBSD system.
 
 > UID        PID  PPID  C STIME TTY      STAT   TIME CMD<br>
 > username   1616 30537  0 23:50 pts/0    S+     0:00 /usr/local/sbin/h4x_y3r_f4c3
@@ -36,7 +36,7 @@ On a FreeBSD system..
 
 Yes, I had to include a reason why FreeBSD is a better system.
 
-Easy solution is to block the outbound port in [iptables](http://www.netfilter.org/projects/iptables/index.html) (I have grown fond of [apf](http://www.rfxn.com/projects/advanced-policy-firewall/) for its ease of use) and be done with it, but thats not good enough for me. First thought was wishing [mount](http://en.wikipedia.org/wiki/Mount_(computing)) or [chattr](http://en.wikipedia.org/wiki/Chattr) had a "stupid and almost never useful" setting of read/write/nodelete. This would have easily solved the problem as I'm sure the [dropper](http://en.wikipedia.org/wiki/Dropper) rm's the file without truncating it first. It is a production server, so I'm unable to unmount the [partition](http://en.wikipedia.org/wiki/Disk_partitioning) and grep blocks for strings. Another issue would be getting permission to make such a change on a production server to research something that's basically a waste of time in the scope of daily operations. These servers will not be around much longer. No, really. I mean it this time.
+Easy solution is to block the outbound port in [iptables](http://www.netfilter.org/projects/iptables/index.html) (I have grown fond of [apf](http://www.rfxn.com/projects/advanced-policy-firewall/) for its ease of use) and be done with it, but that's not good enough for me. First thought was wishing [mount](http://en.wikipedia.org/wiki/Mount_(computing)) or [chattr](http://en.wikipedia.org/wiki/Chattr) had a "stupid and almost never useful" setting of read/write/nodelete. This would have easily solved the problem as I'm sure the [dropper](http://en.wikipedia.org/wiki/Dropper) rm's the file without truncating it first. It is a production server, so I'm unable to unmount the [partition](http://en.wikipedia.org/wiki/Disk_partitioning) and grep blocks for strings. Another issue would be getting permission to make such a change on a production server to research something that's basically a waste of time in the scope of daily operations. These servers will not be around much longer. No, really. I mean it this time.
 
 I'm not a programmer (can read and noodle with [c](http://en.wikipedia.org/wiki/C_(programming_language))/perl/[bash](http://en.wikipedia.org/wiki/Bash_(Unix_shell)) and was proficient in [assembly](http://en.wikipedia.org/wiki/Assembly_language) so I totally missed the "easy" solution. I knew you could view the memory  ranges a process consumes from the proc entry, but i did not know [gdb](http://www.gnu.org/software/gdb/) (which is horrid for anything you don't have the source code for) offered this function, nor that gcore was a stand alone utility to produce [core dumps](http://en.wikipedia.org/wiki/Core_dump) from running processes without terminating them.
 

@@ -2,7 +2,7 @@
 title: "Sniffing packets on the Raspberry Pi 3 with FreeBSD, Netmap, and Suricata"
 date: "2017-02-11T12:40:00-07:00"
 ---
-I run Suricata on a Raspberry Pi 3 at home. Suricata is in af_packet mode, cluster type is cpu, and I have the ring size dialed in to comsume most of the systems memory. The source network isn't of interest. Browsing traffic of a few people, mobile devices, streaming services, cat videos and garbage devices that clog up the tubes. The pi 3 surprisingly holds up well, for a device with a usb nic. Suricata drops < 3% of packets on average. It works. That's fine and all, but I've been wondering how netmap on FreeBSD would function on restrictive and unsupported hardware. FeeBSD can run on the Raspberry Pi 3. Guess it's time to find out.
+I run Suricata on a Raspberry Pi 3 at home. Suricata is in af_packet mode, cluster type is cpu, and I have the ring size dialed in to consume most of the system's memory. The source network isn't of interest. Browsing traffic of a few people, mobile devices, streaming services, cat videos and garbage devices that clog up the tubes. The pi 3 surprisingly holds up well, for a device with a usb nic. Suricata drops < 3% of packets on average. It works. That's fine and all, but I've been wondering how netmap on FreeBSD would function on restrictive and unsupported hardware. FreeBSD can run on the Raspberry Pi 3. Guess it's time to find out.
 
 The Pi 3 is not officially supported platform, though it's been a board option in [crochet](https://github.com/freebsd/crochet) for several months. I started with a FreeBSD 12.0-CURRENT build machine.
 
@@ -29,7 +29,7 @@ Feb  2 20:51:13 snorty last message repeated 117 times
 Feb  2 20:53:14 snorty last message repeated 465 times
 Feb  2 21:03:15 snorty last message repeated 2309 times
 ```
-This error reads like an additional cpu can't start. [This hunk of code](https://github.com/freebsd/freebsd/blob/master/sys/kern/kern_cpu.c#L265-L276) confirms it. A google search lead me to a FreeBSD developer who has been working on the Pi3, and a [blog post containing a quick solution](https://kernelnomicon.org/?p=718). [The change was commited to crochet](https://github.com/freebsd/crochet/commit/43dd6a458849fd1046cb643292351377f29a0a97) a few days ago so you might not have to follow the solution from Gonzo's post. 
+This error reads like an additional cpu can't start. [This hunk of code](https://github.com/freebsd/freebsd/blob/master/sys/kern/kern_cpu.c#L265-L276) confirms it. A google search lead me to a FreeBSD developer who has been working on the Pi3, and a [blog post containing a quick solution](https://kernelnomicon.org/?p=718). [The change was committed to crochet](https://github.com/freebsd/crochet/commit/43dd6a458849fd1046cb643292351377f29a0a97) a few days ago so you might not have to follow the solution from Gonzo's post. 
 
 I also had some unnecessary mount points. I assume this was an artifact of using growfs option in crochet. I unmounted them and commented out of fstab. 
 ```bash

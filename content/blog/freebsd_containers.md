@@ -10,14 +10,14 @@ The [FreeBSD handbook](http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook
 
 Before you get started, take a look at [netstat(1)](http://www.freebsd.org/cgi/man.cgi?query=netstat&amp;apropos=0&amp;sektion=1&amp;manpath=FreeBSD+8.3-RELEASE&amp;arch=default&amp;format=html) or [sockstat(1)](http://www.freebsd.org/cgi/man.cgi?query=sockstat&amp;sektion=1). Any service that is bound to all ip's (*:*) needs to be assigned to a single ip to avoid conflict.
 
-Add an ip aliases to the server:
+Add an ip alias to the server:
 >ifconfig msk0 192.168.1.100 netmask 255.255.255.255 alias
 
 To make it persistent, update /etc/rc.conf:
 
 > ifconfig_msk0_alias0="192.168.1.100 netmask 255.255.255.255"
 
-Compile the world. If you have not installed the FreeBSD source you may do so using sysinstall by adding the full source distribution. Its a necessary process, and doing it now allows one to pay less attention in the future. Might as well install ezjail now too.
+Compile the world. If you have not installed the FreeBSD source you may do so using sysinstall by adding the full source distribution. It's a necessary process, and doing it now allows one to pay less attention in the future. Might as well install ezjail now too.
 
 > cd /usr/src ; make buildworld ; cd /usr/ports/sysutils/ezjail ; make install clean
 
@@ -44,6 +44,6 @@ SSHD is not running by default. You may start services by entering the container
 
 > echo '"sshd_enable="YES"' >> /etc/rc.conf ; /etc/rc.d/sshd start
 
-Now shell your FreBSD vps and go wild.
+Now shell your FreeBSD vps and go wild.
 
 

@@ -4,7 +4,7 @@ date: "2012-09-25T16:47:00-07:00"
 slug: "things-not-to-do-with-puppet"
 ---
 
-I've recently had the pleasure to begin rolling out [Puppet](http://puppetlabs.com/puppet/what-is-puppet/) in various network enclaves. This can be both inviting and intimidating. On one hand, a [sysadmin](http://en.wikipedia.org/wiki/System_administrator) can see the light at the end of the tunnel, stepping closer to job automation. Puppet wears many hats, enabling easy change management for a large number of systems while functioning as an accurate time-line to resolve compliance audits at a moments notice. On the other hand, being tasked with writing [manifests](http://docs.puppetlabs.com/learning/manifests.html) to define systems and their configurations across your employers environment could easily go sour. A simple change that should not have been made uniform or a tweak to correct a previous blunder can break application work flows. It's a fine line between harnessing complexity, setting yourself adrift on an iceberg, or being thrown under the [devops](http://en.wikipedia.org/wiki/DevOps) bus.
+I've recently had the pleasure to begin rolling out [Puppet](http://puppetlabs.com/puppet/what-is-puppet/) in various network enclaves. This can be both inviting and intimidating. On one hand, a [sysadmin](http://en.wikipedia.org/wiki/System_administrator) can see the light at the end of the tunnel, stepping closer to job automation. Puppet wears many hats, enabling easy change management for a large number of systems while functioning as an accurate time-line to resolve compliance audits at a moments notice. On the other hand, being tasked with writing [manifests](http://docs.puppetlabs.com/learning/manifests.html) to define systems and their configurations across your employer's environment could easily go sour. A simple change that should not have been made uniform or a tweak to correct a previous blunder can break application work flows. It's a fine line between harnessing complexity, setting yourself adrift on an iceberg, or being thrown under the [devops](http://en.wikipedia.org/wiki/DevOps) bus.
 
 Unfortunately I've always managed environments that configuration management was either not needed, needed and not used, or configuration automation fell outside of my job description. Flat environments, other software and patch management products, and miscellaneous unspeakable horrors have kept me years late to the party.
 
@@ -12,7 +12,7 @@ Unfortunately I've always managed environments that configuration management was
 
 While drafting a game plan with ease and scalability in mind, I ran through several wrongs before I hit the right [$PATH](http://en.wikipedia.org/wiki/PATH_(variable)) (shell humor). Luckily I'm not on my own and have peers to prevent me from destroying my future.
 
-So lets look at some of my poor choices.
+So let's look at some of my poor choices.
 
 *Don't test until you have written a handful of complete manifests*.
 
@@ -20,7 +20,7 @@ My first run failed because I defined a baseline configuration as a module and t
 
 *Try to design monolithic manifests*.
 
-I'm a simplest by nature. I drift towards clean solutions. I don't care if its a bit too heavy, lacking a few features, or a little behind the curve if it provides easy management and comprehension. The monolithic approach to defining objects to be managed by puppet would work in a landscape with A and B variations. Unfortunately this does not apply to the real world and is a giant waste of time. I cornered myself by having to write an entire manifest for every single server class and configuration, hacking the same manifest over and over. The key to not shooting yourself in the foot with manifest, class, and module design is flexibility.
+I'm a simplest by nature. I drift towards clean solutions. I don't care if it's a bit too heavy, lacking a few features, or a little behind the curve if it provides easy management and comprehension. The monolithic approach to defining objects to be managed by puppet would work in a landscape with A and B variations. Unfortunately this does not apply to the real world and is a giant waste of time. I cornered myself by having to write an entire manifest for every single server class and configuration, hacking the same manifest over and over. The key to not shooting yourself in the foot with manifest, class, and module design is flexibility.
 
 *Write modules to define specific servers before you write a baseline configuration*.
 

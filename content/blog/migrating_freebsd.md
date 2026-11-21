@@ -8,7 +8,7 @@ I arrived at work to find a post-it note on my desk which read "Your disk was sp
 
 The [dump and restore](http://www.freebsd.org/doc/handbook/backup-basics.html) utilities are part of [FreeBSD](http://www.freebsd.org/) which allow you to backup and restore [file systems](http://en.wikipedia.org/wiki/File_system). These utilities also work with [pipes](http://en.wikipedia.org/wiki/Pipeline_(Unix)), allowing you to easily manipulate the data destination, ie [gzip](http://en.wikipedia.org/wiki/Gzip) it and store it remotely with [ssh](http://en.wikipedia.org/wiki/OpenSSH). Dump and restore can work on live file systems. These features allow for a painless migration to a new hard drive, without the hassle of reinstalling the operating system. While this could lead to instability on a drive failing with a high number of read errors or [bad sectors](http://en.wikipedia.org/wiki/Bad_sector), in this instance it was a low risk transfer.
 
-Linux users may find the drive naming structure odd, though its a much better design. Linux [sata drives](http://en.wikipedia.org/wiki/Serial_ATA) show up in the order found, as /dev/sd[a-z] and may have a trailing digit to specify partitions on the drive. FreeBSD uses the sata controller the drive is physically plugged into to define where it lives in the system, followed by the slice number, then partition. This scheme keeps drives named as they should be, regardless if other disks are added or removed from the system, or which order they are detected on boot.
+Linux users may find the drive naming structure odd, though it's a much better design. Linux [sata drives](http://en.wikipedia.org/wiki/Serial_ATA) show up in the order found, as /dev/sd[a-z] and may have a trailing digit to specify partitions on the drive. FreeBSD uses the sata controller the drive is physically plugged into to define where it lives in the system, followed by the slice number, then partition. This scheme keeps drives named as they should be, regardless if other disks are added or removed from the system, or which order they are detected on boot.
 
 You may use fdisk and disklabel to cut the slice and set up partitions on your new drive, though [sysinstall](http://www.freebsd.org/cgi/man.cgi?query=sysinstall&amp;sektion=8) or the stand alone [sade](http://www.freebsd.org/cgi/man.cgi?query=sade&amp;apropos=0&amp;sektion=8&amp;manpath=FreeBSD+8.2-RELEASE&amp;arch=default&amp;format=html) are better suited for ease of use.  In this example my current installation was on /dev/ad4, and I was moving to a new sata drive attached on /dev/ad1.
 
@@ -27,7 +27,7 @@ The commands to migrate are simple.
 newfs /dev/ad1s1a
 mount /dev/ad1s1a /mnt
 cd /mnt
-dump 0afL - / | restore rf -</blockquote>
+dump 0afL - / | restore rf -
 ```
 
 This was to move my root partition. Take note the L argument for dumping from a live file system. Follow the same process to dump usr, tmp, and var, piping them to their new location. Edit fstab on the new drive to correctly reflect where it is or will be. Shutdown the machine, remove your failing disk, boot into your migrated installation, and enjoy not having to reinstall or configure anything.

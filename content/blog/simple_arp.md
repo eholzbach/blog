@@ -36,7 +36,7 @@ Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.91 0:16:17:
 Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.90 0:16:17:28:b2:8d (78:2b:cb:8:6c:d8)
 Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.89 0:16:17:28:b2:8d (78:2b:cb:3a:3c:88)
 Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.88 0:16:17:28:b2:8d (78:2b:cb:19:ba:d7)
-Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.87 0:16:17:28:b2:8d (78:2b:cb:19:ba:d7)</blockquote>
+Nov 28 15:19:11 monitor-server arpwatch: ethernet mismatch 192.168.1.87 0:16:17:28:b2:8d (78:2b:cb:19:ba:d7)
 ```
 
 Such large numbers are a clear indicator 0:16:17:28:b2:8d is the attacker. If the tool has been running for a while the arp.dat file will be populated with data. One entry per line formatted by mac address, ip address, time of last change in [unix epoch](http://en.wikipedia.org/wiki/Unix_time), and resolved hostname if available. Now simply grep the data file for the suspected attacker:
@@ -45,6 +45,6 @@ grep 0:16:17:28:b2:8d /usr/local/arpwatch/arp.dat
 0:16:17:28:b2:8d 192.168.1.234 1322536658 rooted-server
 ```
 
-Now you have an ip of the alleged attacker, and can continue with your incident response procedure. If your monitoring before/during the event, large amounts of "changed station" entries will be logged. The utility can be configured to email you of changes, ad can parse data from snmpwalk for easy integration.
+Now you have an ip of the alleged attacker, and can continue with your incident response procedure. If you're monitoring before/during the event, large amounts of "changed station" entries will be logged. The utility can be configured to email you of changes, ad can parse data from snmpwalk for easy integration.
 
-Of course if this doesn't fit your environment,  you can always start flipping through you bandwidth logs until you find the lowly server now being DoS'ed into tomorrow while the rest of your gear is trying to jam 1000Mbs down its nic. What ever works best for you.
+Of course if this doesn't fit your environment,  you can always start flipping through your bandwidth logs until you find the lowly server now being DoS'ed into tomorrow while the rest of your gear is trying to jam 1000Mbps down its nic. What ever works best for you.
