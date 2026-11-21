@@ -20,7 +20,7 @@
 		{{ partial "singletop.html" . }}
 
 		{{ if not .Params.notoc }}
-			{{ if .TableOfContents }}
+			{{ if .Fragments.Headings }}
 		    <div id="toc" class="pure-u-1 pure-u-md-1-4">
 				<small class="toc-label">Contents</small>
 		   	 	{{ .TableOfContents }}
