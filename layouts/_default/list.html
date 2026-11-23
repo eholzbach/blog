@@ -14,4 +14,9 @@
 		{{- end -}}
 	{{- end -}}
 </ul>
+{{ if and (eq .Kind "section") (eq .Section "posts") }}
+{{ with site.GetPage "/blog" }}
+<p class="archive-link"><a href="{{ .RelPermalink }}">Older posts: {{ .Title }} &rarr;</a></p>
+{{ end }}
+{{ end }}
 {{ end }}

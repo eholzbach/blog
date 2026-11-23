@@ -1,0 +1,9 @@
+/* Gray dotted footer border and social link separators */
+footer,
+footer .border { border-color: #808080; }
+
+/* Dimmer outline on code blocks */
+pre { border-color: #444444; }
+
+/* More space between paragraphs */
+p { margin-block: 1em; }

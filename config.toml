@@ -4,6 +4,7 @@ title = "Unix Blather"
 theme = "archie"
 
 [params]
+customcss = ["css/custom.css"]
 mode = "auto"
 useCDN = false
 subtitle = "...or whatever."
@@ -39,11 +40,6 @@ weight = 1
 name = "Posts"
 url = "/posts/"
 weight = 2
-
-[[menu.main]]
-name = "Archive"
-url = "/blog/"
-weight = 3
 
 [[menu.main]]
 name = "Resume"

@@ -4,7 +4,8 @@ date: "2010-12-20T01:04:00-07:00"
 nodate: "true"
 nopaging: "true"
 ---
-**Director, Infrastructure - [SpecterOps](https://www.specterops.io)** / January 2021 – Current
+## Director, Infrastructure - [SpecterOps](https://www.specterops.io)
+January 2021 – Current
 
 SpecterOps provided the opportunity of a greenfield architecture & implementation of infrastructure for BloodHound Enterprise.
 I built the development and production environments needed to go to market. I spent my first year operating autonomously
@@ -15,9 +16,9 @@ as a Principal Infrastructure Engineer. My focus later expanded, bootstrapping m
 * Maintaining development and production environments for a SaaS product and other offerings
 * Development in Go
 
-<br>
 
-**Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)** / July 2018 - December 2020
+## Senior Manager, Infrastructure, Software Engineering – [Gigamon](https://www.gigamon.com)
+July 2018 - December 2020
 
 Gigamon acquired Icebrg in July of 2018
 
@@ -25,9 +26,9 @@ Gigamon acquired Icebrg in July of 2018
 * Leader by example, listener, coach and enabler
 * Continuation of responsibilities as an individual contributor
 
-<br>
 
-**Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)** / December 2015 - July 2018
+## Principal Operations Engineer - [Icebrg.io](http://www.icebrg.io)
+December 2015 - July 2018
 
 I joined ICEBRG early in the start up phase as the sixth member of engineering, independently taking responsibility
 for the company's infrastructure. My team built the product environment, data stores, substrate infrastructure,
@@ -41,9 +42,9 @@ networking, authentication and access controls.
 * Management of intrusion detection systems in a globally distributed environment
 * Data center maintenance, physical servers, switches and routers, fiber network
 
-<br>
 
-**Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)** / January 2015 - December 2015
+## Senior Systems Security Engineer - [Salesforce Inc.](http://www.salesforce.com)
+January 2015 - December 2015
 
 Our team managed network and systems access controls for the products production infrastructure spanning data centers around the world.
 
@@ -51,9 +52,9 @@ Our team managed network and systems access controls for the products production
 * Management of authentication and authorization systems
 * System & user access controls
 
-<br>
 
-**Senior Configuration Engineer - [FireEye Inc.](http://www.fireeye.com)** / February 2014 - January 2015
+## Senior Configuration Engineer - [FireEye Inc.](http://www.fireeye.com)
+February 2014 - January 2015
 
 FireEye Inc. acquired Mandiant in January of 2014
 
@@ -63,9 +64,9 @@ I reported to the development manager who owned the second generation network se
 * Deployment automation & orchestration, Puppet development
 * Infrastructure and platform service reliability engineering
 
-<br>
 
-**Senior Systems Administrator - [Mandiant](http://www.mandiant.com)** / February 2012 - January 2014
+## Senior Systems Administrator - [Mandiant](http://www.mandiant.com)
+February 2012 - January 2014
 
 Our team built infrastructure that enabled security professionals to drive incident response and managed services for
 our customers. I was responsible for managing network sensors, endpoint agent controllers, a multi platform distributed
