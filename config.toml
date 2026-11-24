@@ -42,9 +42,9 @@ url = "/posts/"
 weight = 2
 
 [[menu.main]]
-name = "Resume"
-url = "/resume/"
-weight = 4
+name = "About"
+url = "/about/"
+weight = 3
 
 [markup.goldmark.renderer]
 unsafe = true
