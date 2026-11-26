@@ -7,3 +7,9 @@ pre { border-color: #444444; }
 
 /* More space between paragraphs */
 p { margin-block: 1em; }
+
+/* Larger base font and width */
+:root {
+  --font-size-base: 18px;
+  --content-max-width: 1000px;
+}
